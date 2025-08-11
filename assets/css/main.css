@@ -1242,6 +1242,54 @@ header {
 }
 
 /*End Footer*/
+
+/* QR Code Section */
+.qr-code-section {
+    margin-top: 2rem;
+    text-align: center;
+    padding: 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.qr-code-title {
+    color: #ffffff;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.qr-code-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+.qr-code {
+    width: 120px;
+    height: 120px;
+    border-radius: 0.8rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    background: #ffffff;
+    padding: 0.5rem;
+    transition: transform 0.3s ease;
+}
+
+.qr-code:hover {
+    transform: scale(1.05);
+}
+
+.qr-code-text {
+    color: #ffffff;
+    font-size: 1.2rem;
+    opacity: 0.8;
+    margin: 0;
+    font-weight: 400;
+}
+
 @media screen and (max-width: 950px) {
   /*Header */
   .hamburger-menu-wrap,
