@@ -9,6 +9,7 @@
 
 html {
   font-size: 10px;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -110,36 +111,43 @@ header {
 }
 
 .menu__link:hover {
-  color: #66BB6A;
+  color: #2E7D32;
 }
 
 .menu__link.active {
-  color: #66BB6A;
+  color: #2E7D32;
   font-weight: bold;
 }
 
+
+
+
+
+/* Header button spacing and styling */
 .header__signup {
   flex: 4;
   display: flex;
   justify-content: flex-end;
+  gap: 1.5rem;
+  align-items: center;
 }
 
-.btn__signup {
+.btn__login {
   border: 1px solid #ffffff;
+  background-color: transparent;
   font-size: 1.6rem;
-  color: #ffffff;
-  /*
-    Button hover effect resource
-    https://codepen.io/alticreation/pen/zBZwOP
-    */
+  color: white;
   display: inline-block;
   transition: all .3s;
   position: relative;
   overflow: hidden;
   z-index: 1;
+  border-radius: .5rem;
+  padding: 1.2rem 2rem;
+  font-weight: 500;
 }
 
-.btn__signup:after {
+.btn__login:after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -150,24 +158,47 @@ header {
   z-index: -2;
 }
 
-.btn__signup:before {
+.btn__login:before {
   content: '';
   position: absolute;
   bottom: 0;
   left: 0;
   width: 0%;
   height: 100%;
-  background-color: #66BB6A;
+  background-color: #2E7D32;
   transition: all .3s;
   z-index: -1;
 }
 
-.btn__signup:hover {
+.btn__login:hover {
   color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(46, 125, 50, 0.3);
 }
 
-.btn__signup:hover:before {
+.btn__login:hover:before {
   width: 100%;
+}
+
+.btn__signup {
+  border: 1px solid #ffffff;
+  background-color: transparent;
+  font-size: 1.6rem;
+  color: #ffffff;
+  display: inline-block;
+  transition: all .3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  border-radius: .5rem;
+  padding: 1.2rem 2rem;
+  font-weight: 500;
+}
+
+.btn__signup:hover {
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
 }
 
 .hamburger-menu-wrap {
@@ -190,7 +221,7 @@ header {
 }
 
 .hamburger-menu .line {
-  background-color: #66BB6A;
+  background-color: #2E7D32;
   height: .3rem;
   width: 100%;
   transition: all 0.3s;
@@ -248,10 +279,10 @@ header {
 }
 
 .btn__hero {
-  border: 1px solid #66BB6A;
+  border: 1px solid #2E7D32;
   color: #ffffff;
   font-size: 1.8rem;
-  box-shadow: 1px 10px 30px -10px #66bb6a;
+  box-shadow: 1px 10px 30px -10px #2e7d32;
   /*
     Button hover effect resource
     https://codepen.io/alticreation/pen/zBZwOP
@@ -270,7 +301,7 @@ header {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #66BB6A;
+  background-color: #2E7D32;
   z-index: -2;
 }
 
@@ -287,7 +318,7 @@ header {
 }
 
 .btn__hero:hover {
-  color: #66BB6A;
+  color: #2E7D32;
 }
 
 .btn__hero:hover:before {
@@ -437,7 +468,7 @@ header {
 }
 
 .invest__item__subtitle {
-  color: #66BB6A;
+  color: #ffffff;
   font-size: 1.4rem;
   font-weight: 400;
   position: relative;
@@ -470,11 +501,11 @@ header {
 }
 
 .btn__invest {
-  color: #66BB6A;
+  color: #2E7D32;
   display: inline-block;
   width: 20rem;
   text-align: center;
-  box-shadow: 1px 10px 30px -10px #66bb6a, 0 0 0 3px rgba(255, 255, 255, 0.3);
+  box-shadow: 1px 10px 30px -10px #2e7d32, 0 0 0 3px rgba(255, 255, 255, 0.3);
   /*
     Button hover effect resource
     https://codepen.io/alticreation/pen/zBZwOP
@@ -504,7 +535,7 @@ header {
   left: 0;
   width: 0%;
   height: 100%;
-  background-color: #66BB6A;
+  background-color: #2E7D32;
   transition: all .3s;
   z-index: -1;
 }
@@ -521,8 +552,9 @@ header {
 /*End How Is Works*/
 .how-is-works {
   background: url("../img/how-is-works-bg.png") no-repeat;
-  background-color: #66BB6A;
+  background-color: #2E7D32;
   margin: auto;
+  padding-top: 8rem;
 }
 
 .works__content {
@@ -575,7 +607,7 @@ header {
 
 .progressbar__step.active {
   background-color: #ffffff;
-  color: #66BB6A;
+  color: #2E7D32;
 }
 
 .progressbar__step.active:not(:first-child)::after {
@@ -615,6 +647,11 @@ header {
   padding: 3rem;
   position: relative;
   align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 1.5rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .works__step__content::before {
@@ -624,7 +661,6 @@ header {
   top: 1.5rem;
   width: calc(100% - 3rem);
   height: calc(100% - 3rem);
-  box-shadow: 0 1px 6px black;
   border-radius: .8rem;
 }
 
@@ -701,41 +737,70 @@ header {
 .testimonial {
   flex-shrink: 0;
   width: 33%;
-  padding: 2.5rem;
-  background-color: #ffffff;
-  filter: drop-shadow(0 0 0.75rem rgba(27, 31, 35, 0.15));
-  transition: transform .3s ease;
+  padding: 3rem;
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border-radius: 1.5rem;
+  filter: drop-shadow(0 8px 25px rgba(27, 31, 35, 0.1));
+  transition: all 0.3s ease-out;
+  border: 1px solid rgba(46, 125, 50, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.testimonial::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #2E7D32 0%, #66BB6A 100%);
 }
 
 .testimonial:hover {
-  transform: scale(1.1);
+  transform: translateY(-10px) scale(1.02);
   z-index: 1;
+  box-shadow: 0 15px 35px rgba(46, 125, 50, 0.15);
+  border-color: rgba(46, 125, 50, 0.3);
 }
 
 .testimonial__profile {
   display: flex;
-  grid-gap: 2.5rem;
+  grid-gap: 2rem;
   align-items: center;
   font-size: 1.8rem;
+  margin-bottom: 2rem;
 }
 
 .testimonial__img {
-  filter: drop-shadow(0 0 0.5rem #66BB6A);
+  filter: drop-shadow(0 0 0.5rem #2E7D32);
   width: 7.2rem;
   height: 7.2rem;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .testimonial__img img {
-  width: initial;
-  max-width: initial;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .testimonial__name {
-  color: #66BB6A;
+  color: #2E7D32;
+  font-weight: 600;
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
 }
 
 .testimonial__title {
-  color: #263238;
+  color: #666666;
+  font-size: 1.4rem;
+  font-weight: 400;
 }
 
 .testimonial__description {
@@ -756,17 +821,41 @@ header {
 .btn__testimonials {
   border-radius: 50%;
   cursor: pointer;
-  padding: 1.5rem;
+  padding: 2rem;
   outline: none;
-  border: none;
-  background-color: #66BB6A;
+  border: 2px solid #2E7D32;
+  background-color: #ffffff;
+  color: #2E7D32;
+  box-shadow: 0 4px 15px rgba(46, 125, 50, 0.2);
+  transition: all 0.3s ease;
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+}
+
+.btn__testimonials:hover {
+  background-color: #2E7D32;
   color: #ffffff;
-  box-shadow: 1px 10px 30px -10px #66bb6a;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(46, 125, 50, 0.3);
 }
 
 .btn__testimonials.disable {
-  background-color: #ffffff;
-  color: #263238;
+  background-color: #f5f5f5;
+  color: #cccccc;
+  border-color: #e0e0e0;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.btn__testimonials.disable:hover {
+  background-color: #f5f5f5;
+  color: #cccccc;
+  transform: none;
+  box-shadow: none;
 }
 
 /*End Testimonials*/
@@ -779,11 +868,14 @@ header {
 }
 
 .pricing__content {
-  max-width: 70rem;
+  max-width: 140rem;
   margin: auto;
   color: #2c3e50;
   padding: 0 1.5rem;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .pricing__head {
@@ -807,20 +899,21 @@ header {
 
 .pricing__body {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 3rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
   margin: 5rem auto 10rem;
-  max-width: 80rem;
+  max-width: 140rem;
 }
 
 .pricing__item {
   background: #ffffff;
   border-radius: 1.5rem;
-  padding: 3rem 2rem;
+  padding: 3rem 3rem;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   border: 2px solid transparent;
+  min-width: 350px;
 }
 
 .pricing__item:hover {
@@ -829,7 +922,7 @@ header {
 }
 
 .pricing__item.featured {
-  border-color: #66BB6A;
+  border-color: #2E7D32;
   transform: scale(1.05);
 }
 
@@ -839,7 +932,7 @@ header {
   top: -15px;
   left: 50%;
   transform: translateX(-50%);
-  background: #66BB6A;
+  background: #2E7D32;
   color: white;
   padding: 0.5rem 2rem;
   border-radius: 2rem;
@@ -855,7 +948,7 @@ header {
 .pricing__item__subtitle {
   font-size: 1.4rem;
   font-weight: 600;
-  color: #66BB6A;
+  color: #2E7D32;
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 1rem;
@@ -904,7 +997,7 @@ header {
   content: "✓";
   position: absolute;
   left: 0;
-  color: #66BB6A;
+  color: #2E7D32;
   font-weight: bold;
   font-size: 1.8rem;
 }
@@ -914,7 +1007,7 @@ header {
 }
 
 .btn__pricing {
-  background: linear-gradient(135deg, #66BB6A 0%, #4CAF50 100%);
+  background: linear-gradient(135deg, #2E7D32 0%, #1B5E20 100%);
   color: white;
   padding: 1.5rem 3rem;
   border-radius: 0.5rem;
@@ -927,9 +1020,9 @@ header {
 }
 
 .btn__pricing:hover {
-  background: linear-gradient(135deg, #4CAF50 0%, #388E3C 100%);
+  background: linear-gradient(135deg, #1B5E20 0%, #0D4A0D 100%);
   transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(102, 187, 106, 0.3);
+  box-shadow: 0 10px 20px rgba(46, 125, 50, 0.3);
 }
 
 .btn__pricing--featured {
@@ -958,16 +1051,16 @@ header {
 }
 
 .farm-invest__title span {
-  color: #66BB6A;
+  color: #2E7D32;
 }
 
 .btn__farm--invest {
-  border: 1px solid #66BB6A;
+  border: 1px solid #2E7D32;
   color: #ffffff;
   display: inline-block;
   min-width: 25rem;
   margin-top: 4rem;
-  box-shadow: 1px 10px 30px -10px #66bb6a;
+  box-shadow: 1px 10px 30px -10px #2e7d32;
   /*
     Button hover effect resource
     https://codepen.io/alticreation/pen/zBZwOP
@@ -986,7 +1079,7 @@ header {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #66BB6A;
+  background-color: #2E7D32;
   z-index: -2;
 }
 
@@ -1003,7 +1096,7 @@ header {
 }
 
 .btn__farm--invest:hover {
-  color: #66BB6A;
+  color: #2E7D32;
 }
 
 .btn__farm--invest:hover:before {
