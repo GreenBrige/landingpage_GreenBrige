@@ -474,7 +474,7 @@ header {
   display: inline-block;
   width: 20rem;
   text-align: center;
-  box-shadow: 1px 10px 30px -10px #66bb6a;
+  box-shadow: 1px 10px 30px -10px #66bb6a, 0 0 0 3px rgba(255, 255, 255, 0.3);
   /*
     Button hover effect resource
     https://codepen.io/alticreation/pen/zBZwOP
@@ -534,6 +534,11 @@ header {
 
 .works__head {
   text-align: center;
+}
+
+.works__button {
+  text-align: center;
+  margin: 3rem 0;
 }
 
 .works__title {
@@ -765,6 +770,179 @@ header {
 }
 
 /*End Testimonials*/
+
+/*Pricing Section*/
+.pricing {
+  background: #f8f9fa;
+  margin: auto;
+  padding: 5rem 0;
+}
+
+.pricing__content {
+  max-width: 70rem;
+  margin: auto;
+  color: #2c3e50;
+  padding: 0 1.5rem;
+  text-align: center;
+}
+
+.pricing__head {
+  margin-bottom: 4rem;
+}
+
+.pricing__title {
+  font-size: 3.6rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #2c3e50;
+}
+
+.pricing__description {
+  font-size: 1.8rem;
+  color: #7f8c8d;
+  max-width: 60rem;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.pricing__body {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem;
+  margin: 5rem auto 10rem;
+  max-width: 80rem;
+}
+
+.pricing__item {
+  background: #ffffff;
+  border-radius: 1.5rem;
+  padding: 3rem 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  border: 2px solid transparent;
+}
+
+.pricing__item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.pricing__item.featured {
+  border-color: #66BB6A;
+  transform: scale(1.05);
+}
+
+.pricing__item.featured::before {
+  content: "Most Popular";
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #66BB6A;
+  color: white;
+  padding: 0.5rem 2rem;
+  border-radius: 2rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.pricing__item__head {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.pricing__item__subtitle {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #66BB6A;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+.pricing__price {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.price__amount {
+  font-size: 4.8rem;
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+.price__period {
+  font-size: 1.6rem;
+  color: #7f8c8d;
+}
+
+.pricing__item__title {
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.pricing__features {
+  margin-bottom: 3rem;
+}
+
+.pricing__features li {
+  padding: 1rem 0;
+  border-bottom: 1px solid #ecf0f1;
+  color: #34495e;
+  font-size: 1.6rem;
+  position: relative;
+  padding-left: 2.5rem;
+}
+
+.pricing__features li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #66BB6A;
+  font-weight: bold;
+  font-size: 1.8rem;
+}
+
+.pricing__features li:last-child {
+  border-bottom: none;
+}
+
+.btn__pricing {
+  background: linear-gradient(135deg, #66BB6A 0%, #4CAF50 100%);
+  color: white;
+  padding: 1.5rem 3rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 1.6rem;
+  transition: all 0.3s ease;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+
+.btn__pricing:hover {
+  background: linear-gradient(135deg, #4CAF50 0%, #388E3C 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(102, 187, 106, 0.3);
+}
+
+.btn__pricing--featured {
+  background: linear-gradient(135deg, #FF6B6B 0%, #FF5252 100%);
+}
+
+.btn__pricing--featured:hover {
+  background: linear-gradient(135deg, #FF5252 0%, #D32F2F 100%);
+  box-shadow: 0 10px 20px rgba(255, 107, 107, 0.3);
+}
+
+/*End Pricing Section*/
+
 /*Farm Invest */
 .farm-invest {
   margin: auto;
@@ -831,6 +1009,8 @@ header {
 .btn__farm--invest:hover:before {
   width: 100%;
 }
+
+
 
 /*End Farm Invest*/
 /*Footer*/
@@ -1020,6 +1200,18 @@ header {
     width: 50%;
   }
   /*End Testimonials*/
+  
+  /*Pricing*/
+  .pricing__body {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    max-width: 40rem;
+  }
+  
+  .pricing__item.featured {
+    transform: none;
+  }
+  /*End Pricing*/
 }
 
 @media screen and (max-width: 768px) {
@@ -1081,6 +1273,7 @@ header {
   .invest__title,
   .works__title,
   .testimonials__title,
+  .pricing__title,
   .farm-invest__title {
     font-size: 3rem;
   }
